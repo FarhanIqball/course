@@ -11,12 +11,12 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Dataset
 datetime_cols = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
-all_df = pd.read_csv("https://raw.githubusercontent.com/mhdhfzz/data-analyst-dicoding/main/dashboard/df.csv")
+all_df = pd.read_csv("https://github.com/FarhanIqball/course/blob/af070c85c75d979b9df9a4f4023a6f1beaa7c074/dashboard.py")
 all_df.sort_values(by="order_approved_at", inplace=True)
 all_df.reset_index(inplace=True)
 
 # Geolocation Dataset
-geolocation = pd.read_csv('https://raw.githubusercontent.com/mhdhfzz/data-analyst-dicoding/main/dashboard/geolocation.csv')
+geolocation = pd.read_csv('https://github.com/FarhanIqball/course/blob/af070c85c75d979b9df9a4f4023a6f1beaa7c074/geolocation.csv')
 data = geolocation.drop_duplicates(subset='customer_unique_id')
 
 for col in datetime_cols:
@@ -31,7 +31,7 @@ with st.sidebar:
     with col1:
         st.write(' ')
     with col2:
-        st.image("https://raw.githubusercontent.com/mhdhfzz/data-analyst-dicoding/main/dashboard/logo.png"
+        st.image("https://github.com/FarhanIqball/course/blob/c05a76b2b8efdb9d6758a25e0e734f2e6037e8ac/logo.jpg"
                  , width=100)
     with col3:
         st.write(' ')
@@ -206,4 +206,3 @@ with tab2:
     with st.expander("See Explanation"):
         st.write('According to the graph that has been created, there are more customers in the southeast and south. Other information, there are more customers in cities that are capitals (São Paulo, Rio de Janeiro, Porto Alegre, and others).')
 
-st.caption('Copyright (C) Muhammad Hafiz 2023')
